@@ -1,0 +1,4 @@
+{
+  "GOOGLE_CLIENT_ID": "YOUR GOOGLE CLIENT ID",
+  "GOOGLE_AUTH_CALLBACK_URL": "http://localhost:5000/api/v1/auth/google"
+}
