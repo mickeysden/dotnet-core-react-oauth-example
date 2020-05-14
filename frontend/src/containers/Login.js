@@ -13,6 +13,7 @@ class Login extends Component {
   };
 
   googleResponse = (response) => {
+    console.log(response);
     if (!response.tokenId) {
       console.error("Unable to get tokenId from Google", response)
       return;

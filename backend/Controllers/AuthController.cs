@@ -17,7 +17,7 @@ using System.Text;
 namespace backend_test.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("api/v1/[controller]")]
+    [Route("api/[controller]")]
     public class AuthController : Controller
     {
         private IAuthService _authService;
@@ -33,7 +33,7 @@ namespace backend_test.Controllers
         {
             try
             {
-                //SimpleLogger.Log("userView = " + userView.tokenId);
+                SimpleLogger.Log("userView = " + userView.tokenId);
                 var payload = GoogleJsonWebSignature.ValidateAsync(userView.tokenId, new GoogleJsonWebSignature.ValidationSettings()).Result;
                 var user = await _authService.Authenticate(payload);
                 SimpleLogger.Log(payload.ExpirationTimeSeconds.ToString());

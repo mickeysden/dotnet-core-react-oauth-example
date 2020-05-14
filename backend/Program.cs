@@ -29,7 +29,7 @@ namespace backend_test
             JObject o = JObject.Parse(@json);
             AppSettings.appSettings = JsonConvert.DeserializeObject<AppSettings>(o["AppSettings"].ToString());
 
-            //Helpers.SimpleLogger.Log(Models.AppSettings.appSettings.JwtSecret);
+            Helpers.SimpleLogger.Log(Models.AppSettings.appSettings.GoogleClientId);
 
             CreateWebHostBuilder(args).Build().Run();
         }
